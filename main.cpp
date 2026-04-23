@@ -92,6 +92,9 @@ Player(){
     void resetStreak() { winStreak = 0; }
 };
 
+class Game : public Player {
+private:
+
 };
 int main(){
     
