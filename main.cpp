@@ -4,6 +4,11 @@
 
 using namespace std;
 class player{
+protected:
+string name;
+int balance;
+int winStreak;
+public:
 
 
 };
