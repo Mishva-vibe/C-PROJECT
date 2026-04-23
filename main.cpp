@@ -95,6 +95,24 @@ Player(){
 class Game : public Player {
 private:
 
+int generate(int seed) {
+        int sum = 0;
+
+        for (int i = 0; i < name.length(); i++)
+            sum += name[i];
+
+        sum = sum + balance + winStreak * 13 + seed * 7;
+        sum = (sum * 17 + 23) % 100;
+
+        return sum;
+    }
+
+void saveHistory(string game, string result, int bet) {
+        ofstream file("history.txt", ios::app);
+        file << name << " | " << game << " | Bet: " << bet
+             << " | " << result << endl;
+        file.close();
+    }
 };
 int main(){
     
