@@ -3,6 +3,10 @@
 #include<string>
 
 using namespace std;
+class player{
+
+
+};
 int main(){
     
 }
