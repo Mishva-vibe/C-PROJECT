@@ -129,6 +129,33 @@ void numberGame() {
             cout << "Guess (1-10): ";
             cin >> guess;
         } while (guess < 1 || guess > 10);
+        
+        int number = (generate(guess) % 10) + 1;
+
+        cout << "Number: " << number << endl;
+
+        if (guess == number) {
+            int reward = bet * 5;
+
+            if (winStreak >= 2)
+                reward += bet * 2;
+
+            cout << "You WON: " << reward << endl;
+            updateBalance(reward);
+            increaseStreak();
+
+            saveHistory("NumberGame", "WIN", bet);
+        } else {
+            cout << "You LOST: " << bet << endl;
+            updateBalance(-bet);
+            resetStreak();
+
+            saveHistory("NumberGame", "LOSS", bet);
+        }
+
+        save();
+    }
+
 
 int main(){
     
