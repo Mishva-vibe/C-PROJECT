@@ -156,7 +156,38 @@ void numberGame() {
         save();
     }
 
+public:
+    void menu() {
+        int choice;
 
-int main(){
-    
+        do {
+            cout << "\n===== CASINO =====\n";
+            cout << "1. Number Game\n";
+            cout << "2. Dice Game\n";
+            cout << "3. Deposit\n";
+            cout << "4. Balance\n";
+            cout << "5. Exit\n";
+
+            cout << "Choice: ";
+            cin >> choice;
+
+            switch (choice) {
+                case 1: numberGame(); break;
+                case 2: diceGame(); break;
+                case 3: deposit(); break;
+                case 4: cout << "Balance: " << balance << endl; break;
+                case 5: cout << "Exiting...\n"; break;
+                default: cout << "Invalid\n";
+            }
+
+        } while (choice != 5);
+    }
+};
+
+// ================= MAIN =================
+int main() {
+    Game g;
+    g.login();
+    g.menu();
+    return 0;
 }
