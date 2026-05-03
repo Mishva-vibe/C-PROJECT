@@ -114,6 +114,22 @@ void saveHistory(string game, string result, int bet) {
         file.close();
     }
 };
+
+void numberGame() {
+        int bet, guess;
+
+        cout << "\nBalance: " << balance << endl;
+
+        do {
+            cout << "Enter bet: ";
+            cin >> bet;
+        } while (bet <= 0 || bet > balance);
+
+        do {
+            cout << "Guess (1-10): ";
+            cin >> guess;
+        } while (guess < 1 || guess > 10);
+
 int main(){
     
 }
