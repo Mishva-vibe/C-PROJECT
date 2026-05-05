@@ -110,6 +110,7 @@ public:
     void increaseStreak() { winStreak++; }
     void resetStreak() { winStreak = 0; }
 };
+
 class Game : public Player {
 private:
     int generate(int seed) {
@@ -169,12 +170,12 @@ private:
 
         if (guess == number) {
             int reward = bet * 5;
-            cout << "🎉 You WON: " << reward << endl;
+            cout << "You WON: " << reward << endl;
             updateBalance(reward);
             increaseStreak();
             saveHistory("NumberGame", "WIN", bet);
         } else {
-            cout << "❌ You LOST: " << bet << endl;
+            cout << "You LOST: " << bet << endl;
             updateBalance(-bet);
             resetStreak();
             saveHistory("NumberGame", "LOSS", bet);
@@ -221,12 +222,12 @@ private:
 
         if (guess == dice) {
             int reward = bet * 3;
-            cout << "🎉 You WON: " << reward << endl;
+            cout << "You WON: " << reward << endl;
             updateBalance(reward);
             increaseStreak();
             saveHistory("DiceGame", "WIN", bet);
         } else {
-            cout << "❌ You LOST: " << bet << endl;
+            cout << "You LOST: " << bet << endl;
             updateBalance(-bet);
             resetStreak();
             saveHistory("DiceGame", "LOSS", bet);
